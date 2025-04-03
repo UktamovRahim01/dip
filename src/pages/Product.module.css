@@ -1,0 +1,164 @@
+#root {
+  height: 100%;
+}
+
+.productContainer {
+  text-align: center; /* Центрирование текста */
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mainImage {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.productDescription {
+  margin-bottom: 15px;
+}
+
+.quantityContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantityContainer button,
+.quantityContainer input {
+  margin: 0 5px;
+}
+
+.addToCartButton {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #5cb85c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addToCartButton:disabled {
+  background-color: #ccc;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.swiperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCard,
+.volumeCard,
+.varietyCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.outOfStock {
+  background-color: red;
+  color: white;
+}
+
+.selected {
+  border: 2px solid blue;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .productContainer {
+    width: 90%; /* Увеличиваем ширину на мобильных */
+  }
+
+  .productDetails {
+    padding: 15px;
+  }
+
+  .mainImage {
+    width: 100%; /* Уменьшаем размер изображения */
+    max-height: 300px; /* Устанавливаем максимальную высоту */
+  }
+
+  .quantityContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .addToCartButton {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .swiperContainer {
+    flex-direction: column; /* Вертикальное расположение свайпера */
+    gap: 20px;
+  }
+
+  .productCard,
+  .volumeCard,
+  .varietyCard {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .productCard img {
+    width: 100%;
+    max-height: 200px;
+  }
+}
+
+/* Для еще меньших экранов */
+@media (max-width: 480px) {
+  .productContainer {
+    width: 95%;
+  }
+
+  .productDetails {
+    padding: 10px;
+  }
+
+  .mainImage {
+    max-height: 250px;
+  }
+
+  .addToCartButton {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .swiperContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .productCard,
+  .volumeCard,
+  .varietyCard {
+    width: 100%;
+  }
+
+  .productCard img {
+    height: 150px;
+  }
+}

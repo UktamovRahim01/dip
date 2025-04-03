@@ -1,0 +1,76 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.header {
+  background-color: #333;
+  padding: 15px;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navList li a, .user {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logout {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+
+  .navList {
+    flex-direction: column; /* Меняем ориентацию на колонку */
+    gap: 10px;
+    align-items: center; /* Центрируем ссылки по горизонтали */
+  }
+
+  .navList li {
+    width: 100%; /* Заставляем элементы списка растягиваться на всю ширину */
+    text-align: center; /* Выравнивание текста по центру */
+  }
+
+  .logout {
+    margin-top: 10px; /* Добавляем отступ сверху для кнопки выхода */
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Еще более маленькие экраны, например, смартфоны */
+@media (max-width: 480px) {
+  .header {
+    padding: 8px;
+  }
+
+  .navList {
+    gap: 8px; /* Уменьшаем отступы между элементами */
+  }
+
+  .navList li {
+    font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
+  }
+
+  .logout {
+    font-size: 14px;
+  }
+}
