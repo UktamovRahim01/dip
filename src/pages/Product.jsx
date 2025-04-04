@@ -13,6 +13,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
+  
   useEffect(() => {
     const productId = localStorage.getItem("selectedProduct");
     if (!productId) return navigate("/");
@@ -94,7 +95,7 @@ const Product = () => {
 
       {/* Свайпер с товарами той же подкатегории */}
       <h2>Другие товары из категории "{selectedProduct.subcategory}"</h2>
-      <Swiper spaceBetween={15} slidesPerView={3}>
+      <Swiper spaceBetween={15} slidesPerView={4}>
         {filteredProducts.map((product) => (
           <SwiperSlide key={product.id} onClick={() => handleProductSelect(product.id)}>
             <div
@@ -115,7 +116,7 @@ const Product = () => {
             <div
               className={`${styles.volumeCard} ${(product.name === selectedProduct.name && product.volume === selectedProduct.volume) ? styles.selected : ""} ${isOutOfStock(products.filter(p => p.name === product.name && p.volume === product.volume)) ? styles.outOfStock : ""}`}
             >
-              <p>{product.volume} л</p>
+              <p>{product.volume} {product.meas}</p>
             </div>
           </SwiperSlide>
         ))}
@@ -161,5 +162,7 @@ const Product = () => {
     </div>
   );
 };
+
+
 
 export default Product;
