@@ -38,7 +38,12 @@ const Home = () => {
       {categoryData.map(([category, subcategories]) => (
         <div key={category} className={styles.categoryBlock}>
           <h2>{category}</h2>
-          <Swiper spaceBetween={15} slidesPerView={3}>
+          <Swiper spaceBetween={15} breakpoints={{
+        320: { slidesPerView: 2 },
+        480: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+      }}>
             {Object.values(subcategories).map((product) => (
               <SwiperSlide key={product.id} onClick={() => handleProductClick(product.id)}>
                 <div className={styles.productCard}>

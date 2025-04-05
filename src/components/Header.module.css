@@ -1,76 +1,163 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/* Стили для header */
 .header {
-  background-color: #333;
-  padding: 15px;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #3b82f6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navList {
-  list-style: none;
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
 }
 
-.navList li a, .user {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.navList li {
+  font-size: 1rem;
 }
 
+.navList a,
 .logout {
-  background: none;
+  color: #ffffff;
+  background-color: transparent;
   border: none;
-  color: white;
-  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.navList a:hover,
+.logout:hover {
+  background: #3b82f6;
+}
+
+.user {
+  color: #9ca3af;
+  font-weight: 500;
   cursor: pointer;
 }
 
-.logout:hover {
-  text-decoration: underline;
+.burgerMenu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
 }
 
-/* Адаптация для мобильных устройств */
+.burgerMenu span {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+.burgerMenu.open span {
+  background-color: transparent;
+}
+
+.burgerMenu.open::before {
+  content: "×";
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.menuOpen {
+  display: flex;
+  position: absolute;
+  top: 70px;
+  right: 2rem;
+  background-color: #111827;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  gap: 1rem;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
-  .header {
-    padding: 10px;
-  }
-
   .navList {
-    flex-direction: column; /* Меняем ориентацию на колонку */
-    gap: 10px;
-    align-items: center; /* Центрируем ссылки по горизонтали */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
   }
 
   .navList li {
-    width: 100%; /* Заставляем элементы списка растягиваться на всю ширину */
-    text-align: center; /* Выравнивание текста по центру */
+    width: 100%;
+    text-align: left;
   }
 
-  .logout {
-    margin-top: 10px; /* Добавляем отступ сверху для кнопки выхода */
-    width: 100%;
-    text-align: center;
+  .burgerMenu {
+    display: flex;
+  }
+
+  .navList.open {
+    display: flex;
+  }
+
+  .header {
+    justify-content: space-between;
   }
 }
 
-/* Еще более маленькие экраны, например, смартфоны */
-@media (max-width: 480px) {
-  .header {
-    padding: 8px;
+@media (min-width: 768px) {
+  .navList {
+    display: flex;
+    justify-content: flex-start;
   }
 
-  .navList {
-    gap: 8px; /* Уменьшаем отступы между элементами */
+  .header {
+    justify-content: space-between;
   }
 
   .navList li {
-    font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
+    margin-left: 2rem;
   }
 
-  .logout {
-    font-size: 14px;
+  .user {
+    cursor: pointer;
+    margin-left: auto;
   }
+}
+
+.confirmLogout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: block;
+  z-index: 200;
+}
+
+.confirmLogout button {
+  margin: 10px;
+  padding: 8px 15px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmLogout button:hover {
+  background-color: #2563eb;
 }

@@ -13,7 +13,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
-  
+
   useEffect(() => {
     const productId = localStorage.getItem("selectedProduct");
     if (!productId) return navigate("/");
@@ -95,7 +95,12 @@ const Product = () => {
 
       {/* Свайпер с товарами той же подкатегории */}
       <h2>Другие товары из категории "{selectedProduct.subcategory}"</h2>
-      <Swiper spaceBetween={15} slidesPerView={4}>
+      <Swiper spaceBetween={15} breakpoints={{
+        320: { slidesPerView: 2 },
+        480: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+      }}>
         {filteredProducts.map((product) => (
           <SwiperSlide key={product.id} onClick={() => handleProductSelect(product.id)}>
             <div
@@ -110,7 +115,9 @@ const Product = () => {
 
       {/* Свайпер с объемами */}
       <h2>Доступные объемы</h2>
-      <Swiper spaceBetween={15} slidesPerView={4}>
+      <Swiper spaceBetween={15} breakpoints={{
+        1024: { slidesPerView: 4 },
+      }}>
         {volumes.map((product) => (
           <SwiperSlide key={product.id} onClick={() => handleProductSelect(product.id)}>
             <div
@@ -126,7 +133,12 @@ const Product = () => {
       {varieties.length > 1 && (
         <>
           <h2>Доступные разновидности</h2>
-          <Swiper spaceBetween={15} slidesPerView={4}>
+          <Swiper spaceBetween={15} breakpoints={{
+            320: { slidesPerView: 2 },
+            480: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}>
             {varieties.map((product) => (
               <SwiperSlide key={product.id} onClick={() => handleProductSelect(product.id)}>
                 <div
