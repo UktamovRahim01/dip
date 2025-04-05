@@ -1,9 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .container {
   padding: 40px 20px;
   background: linear-gradient(135deg, #fff0f5, #e0f7fa);
   font-family: "Poppins", "Segoe UI", sans-serif;
   min-height: 100vh;
   color: #111;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 h1 {

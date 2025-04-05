@@ -116,7 +116,10 @@ const Product = () => {
       {/* Свайпер с объемами */}
       <h2>Доступные объемы</h2>
       <Swiper spaceBetween={15} breakpoints={{
-        1024: { slidesPerView: 4 },
+        320: { slidesPerView: 4 },
+        480: { slidesPerView: 4 },
+        768: { slidesPerView: 5 },
+        1024: { slidesPerView: 6 },
       }}>
         {volumes.map((product) => (
           <SwiperSlide key={product.id} onClick={() => handleProductSelect(product.id)}>

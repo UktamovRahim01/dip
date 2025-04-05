@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .productContainer {
   padding: 40px 20px;
   background: linear-gradient(135deg, #e0f7fa, #fff0f5);
@@ -179,9 +185,9 @@ h2 {
     flex: 0 0 65%;
   }
 
-  .quantityContainer {
+  /* .quantityContainer {
     flex-direction: column;
-  }
+  } */
 }
 
 @media (max-width: 480px) {
