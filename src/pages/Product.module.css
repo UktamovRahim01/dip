@@ -176,6 +176,9 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  .productContainer {
+    padding: 15px 10px;
+  }
   .mainImage {
     width: 200px;
     height: 200px;

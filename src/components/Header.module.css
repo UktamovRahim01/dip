@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Основные стили для шапки */
 .header {
   position: relative;
@@ -7,6 +13,7 @@
   padding: 10px 20px;
   background-color: #333;
   color: white;
+  height: 60px;
 }
 
 .navbar {
@@ -62,6 +69,7 @@
   color: white;
   font-size: 30px;
   cursor: pointer;
+
 }
 
 /* Стили для сайдбара (мобильная версия) */
@@ -159,6 +167,7 @@
 
   .menuButton {
     display: block; /* Показываем гамбургер-меню */
+    padding: 0;
   }
 
   .navbar {
