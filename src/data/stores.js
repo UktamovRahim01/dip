@@ -4,24 +4,32 @@ export const stores = [
     owner: "Иван Иванов",
     storeName: "Магазин 1",
     phoneNumber: "123-456-789",
-    address: "Москва, ул. Ленина, д. 10",
-    latitude: 55.7558, // Широта
-    longitude: 37.6173, // Долгота
+    address: "Самарканд, ул. Ленина, д. 10",
+    latitude: 39.659435, // Широта
+    longitude: 67.007815, // Долгота
   },
   {
     owner: "Петр Петров",
     storeName: "Магазин 2",
     phoneNumber: "987-654-321",
-    address: "Санкт-Петербург, ул. Пушкина, д. 15",
-    latitude: 63.9343,
-    longitude: 40.3351,
+    address: "Самарканд, ул. Пушкина, д. 15",
+    latitude: 39.659427,
+    longitude: 67.005358,
   },
   {
     owner: "Сергей Сергеев",
     storeName: "Магазин 3",
     phoneNumber: "555-666-777",
-    address: "Новосибирск, ул. Кузнецова, д. 20",
-    latitude: 59.9343,
-    longitude: 30.3351,
+    address: "Самарканд, ул. Кузнецова, д. 20",
+    latitude: 39.659265,
+    longitude: 67.005452,
+  },
+  {
+    owner: "Хасанбой",
+    storeName: "Магазин 4",
+    phoneNumber: "555-666-777",
+    address: "Самарканд, ул. Кузнецова, д. 28",
+    latitude: 39.645388,
+    longitude: 66.975581,
   }
 ];

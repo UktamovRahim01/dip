@@ -27,6 +27,7 @@ const Contacts = () => {
   }, []);
 
   return (
+
     <div className={styles.contactsContainer}>
       <h1>Контакты</h1>
 
@@ -36,24 +37,25 @@ const Contacts = () => {
           zoom={13}
           scrollWheelZoom={false}
           style={{ width: "100%", height: "500px" }}
-        >
+          >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
+            />
           
           {/* Отображаем метки магазинов */}
           {stores.map((store) => (
             <Marker
-              key={store.storeName}
-              position={[store.latitude, store.longitude]}
-              icon={L.icon({
-                iconUrl: "/marker-icon.png", // Можно использовать собственную иконку
-                iconSize: [32, 32],
-              })}
+            key={store.storeName}
+            position={[store.latitude, store.longitude]}
+            icon={L.icon({
+              iconUrl: "/marker-icon.png", // Можно использовать собственную иконку
+              iconSize: [32, 32],
+            })}
             >
               <Popup>
                 <strong>{store.storeName}</strong>
+                <strong>{" /" + store.owner}</strong>
                 <br />
                 {store.address}
               </Popup>
