@@ -5,6 +5,11 @@ import "swiper/css";
 import products from "../data/products";
 import styles from "./Product.module.css";
 
+
+
+
+
+
 const Product = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -12,6 +17,7 @@ const Product = () => {
   const [varieties, setVarieties] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -55,6 +61,8 @@ const Product = () => {
     );
   };
 
+
+
   const handleProductSelect = (id) => {
     const newProduct = products.find((p) => p.id === id);
     if (newProduct) {
@@ -82,6 +90,12 @@ const Product = () => {
     filteredArray.every((p) => p.stock === 0);
 
   if (!selectedProduct) return null;
+
+  const isUserLoggedIn = () => {
+    const userId = localStorage.getItem("user");
+    return !!userId;
+  };
+  console.log(isUserLoggedIn());
 
   return (
     <div className={styles.productContainer}>
@@ -156,26 +170,40 @@ const Product = () => {
         </>
       )}
 
+
+
       {/* Блок количества и добавления в корзину */}
-      <div className={styles.centerContainer}>
-        <p><strong>Количество в наличии:</strong> {selectedProduct.stock}</p>
-        <div className={styles.quantityContainer}>
-          <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>-</button>
-          <input
-            type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(Math.min(selectedProduct.stock, Number(e.target.value)))}
-            min="1"
-            max={selectedProduct.stock}
-          />
-          <button onClick={() => setQuantity((q) => Math.min(selectedProduct.stock, q + 1))}>+</button>
+
+
+      {isUserLoggedIn() ? (
+        <div className={styles.centerContainer}>
+          <p><strong>Количество в наличии:</strong> {selectedProduct.stock}</p>
+          <div className={styles.quantityContainer}>
+            <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>-</button>
+            <input
+              type="number"
+              value={quantity}
+              onChange={(e) => setQuantity(Math.min(selectedProduct.stock, Number(e.target.value)))}
+              min="1"
+              max={selectedProduct.stock}
+            />
+            <button onClick={() => setQuantity((q) => Math.min(selectedProduct.stock, q + 1))}>+</button>
+          </div>
+          <button className={styles.addToCartButton} onClick={handleAddToCart} disabled={selectedProduct.stock === 0}>
+            Добавить в корзину
+          </button>
         </div>
-        <button className={styles.addToCartButton} onClick={handleAddToCart} disabled={selectedProduct.stock === 0}>
-          Добавить в корзину
-        </button>
-      </div>
+      ) : (<div>
+            {/* <Link to="/auth">Войти</Link> */}
+        <div className={styles.centerContainer}>
+
+        <button  className={styles.addToCartButton} onClick={() => (window.location.href = '/auth')} disabled={selectedProduct.stock === 0}>
+        Войти чтобы заказать  </button>
+        </div>
+      </div>)}
     </div>
   );
+  const router = useRouter();
 };
 
 

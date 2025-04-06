@@ -112,9 +112,9 @@
 /* Крестик для закрытия сайдбара */
 .closeButton {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   background: none;
   border: none;
@@ -175,7 +175,7 @@
   }
 
   .sidebar {
-    width: 30%; /* Уменьшаем ширину сайдбара до 30% */
+    width: 40%; /* Уменьшаем ширину сайдбара до 30% */
     right: -100%; /* Начальная позиция для скрытия */
   }
 

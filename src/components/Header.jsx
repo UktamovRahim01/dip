@@ -33,7 +33,7 @@ const Header = ({ user, onLogout }) => {
         <div className={styles.userActions}>
           {user ? (
             <>
-              <span className={styles.user} onClick={toggleLogoutModal}>Привет, {user.login}</span>
+              <span className={styles.user} onClick={toggleLogoutModal}>{user.login}</span>
             </>
           ) : (
             <Link to="/auth">Войти</Link>
@@ -54,11 +54,11 @@ const Header = ({ user, onLogout }) => {
           {user && <li><Link to="/contacts" onClick={toggleSidebar}>Контакты</Link></li>}
           {user && (
             <>
-              <li className={styles.user} onClick={toggleLogoutModal}>Привет, {user.login}</li>
+              <li className={styles.user} onClick={toggleLogoutModal}>{user.login}</li>
             </>
           )}
           {user ? (
-            <li><button className={styles.logout} onClick={handleLogout}>Выйти</button></li>
+            <li></li>
           ) : (
             <li><Link to="/auth" onClick={toggleSidebar}>Войти</Link></li>
           )}
