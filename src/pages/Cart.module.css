@@ -11,6 +11,9 @@ body>div {
   max-width: 1200px;
   margin: 0 auto;
   font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cartContainer h1 {
@@ -124,7 +127,7 @@ body>div {
 }
 
 .checkoutButton {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   background: linear-gradient(135deg, #3b82f6, #6366f1);
   color: white;
   border: none;
@@ -140,11 +143,7 @@ body>div {
   opacity: 0.9;
 }
 
-.fzz{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 /* Адаптивность */
 @media (min-width: 768px) {
@@ -166,6 +165,6 @@ body>div {
   .checkoutButton {
     width: auto;
     display: block;
-    margin-left: auto;
+    /* margin-left: auto; */
   }
 }
