@@ -1,6 +1,13 @@
+body>div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .contactsContainer {
   text-align: center;
-  height: 81.5vh;
+  flex: 1;
+  min-height: 0;
 
 }
 

@@ -95,7 +95,6 @@ const Product = () => {
     const userId = localStorage.getItem("user");
     return !!userId;
   };
-  console.log(isUserLoggedIn());
 
   return (
     <div className={styles.productContainer}>

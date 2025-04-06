@@ -54,7 +54,7 @@ const Cart = () => {
     }
 
     const userId = localStorage.getItem("userId") || "guest"; // ID пользователя (или гость)
-    
+
     const newOrder = {
       id: Date.now(), // Уникальный ID заказа
       userId,
@@ -106,7 +106,7 @@ const Cart = () => {
 
           <div className={styles.storeSelectContainer}>
             <label className={styles.storeSelectLabel}>Выберите магазин</label>
-            <select 
+            <select
               className={styles.storeSelect}
               value={selectedStore?.storeName || ''}
               onChange={(e) => {
@@ -117,7 +117,7 @@ const Cart = () => {
             >
               {stores.map((store) => (
                 <option key={store.storeName} value={store.storeName}>
-                  {store.storeName}
+                  {store.storeName} {store.owner}
                 </option>
               ))}
             </select>

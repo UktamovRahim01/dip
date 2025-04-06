@@ -6,7 +6,7 @@ import { stores } from "../data/stores"; // Массив с данными о м
 import styles from "./Contacts.module.css";
 
 const Contacts = () => {
-  const [userLocation, setUserLocation] = useState([51.505, -0.09]); // Начальная позиция (по умолчанию Лондон)
+  const [userLocation, setUserLocation] = useState([39.659176, 67.006111]); // Начальная позиция (по умолчанию Лондон)
   const [loading, setLoading] = useState(true); // Флаг загрузки
 
   // Получаем текущее местоположение пользователя
