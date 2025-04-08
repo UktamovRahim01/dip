@@ -4,6 +4,8 @@ import L from "leaflet"; // Импортируем библиотеку Leaflet
 import "leaflet/dist/leaflet.css";
 import { stores } from "../data/stores"; // Массив с данными о магазинах
 import styles from "./Contacts.module.css";
+import { Link } from "react-router-dom";
+
 
 const Contacts = () => {
   const [userLocation, setUserLocation] = useState([39.659176, 67.006111]); // Начальная позиция (по умолчанию Лондон)
@@ -54,7 +56,8 @@ const Contacts = () => {
             })}
             >
               <Popup>
-                <strong>{store.storeName}</strong>
+        
+                <strong>{<Link to="/Product">{store.storeName}</Link>}</strong>
                 <strong>{" /" + store.owner}</strong>
                 <br />
                 {store.address}
