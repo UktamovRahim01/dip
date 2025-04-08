@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import products from "../data/products";
 import styles from "./Product.module.css";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -193,11 +193,9 @@ const Product = () => {
           </button>
         </div>
       ) : (<div>
-            {/* <Link to="/auth">Войти</Link> */}
+        {/* <Link to="/auth">Войти</Link> */}
         <div className={styles.centerContainer}>
-
-        <button  className={styles.addToCartButton} onClick={() => (window.location.href = '/auth')} disabled={selectedProduct.stock === 0}>
-        Войти чтобы заказать  </button>
+        <Link className={styles.addToCartButton} disabled={selectedProduct.stock === 0} to="/auth">Войти чтобы заказать</Link>
         </div>
       </div>)}
     </div>
